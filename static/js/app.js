@@ -21,7 +21,7 @@ function buildMetadata(sample) {
     // Inside a loop, you will need to use d3 to append new
     // tags for each key-value in the filtered metadata.
     for (let i in desiredObject) {
-      d3.select();
+      sampleMetadata.html(i).append("p")
     }
   });
 }
@@ -61,7 +61,7 @@ function buildCharts(sample) {
     };
 
     // Render the Bubble Chart
-    Plotly.newPlot("plot", dataBar, layoutBar);
+    Plotly.newPlot("plot", dataBubble, layoutBubble;
 
     // For the Bar Chart, map the otu_ids to a list of strings for your yticks
     let mapOTUIDs = otuIDs.map(function(item) {
@@ -100,20 +100,24 @@ function init() {
     // Use the list of sample names to populate the select options
     // Hint: Inside a loop, you will need to use d3 to append a new
     // option for each sample name.
-    
+    for (let i in names) {
+      dropdownMenu.html(i).append("p")
+    }
 
     // Get the first sample from the list
-
+    let first = dropdownMenu[0]
 
     // Build charts and metadata panel with the first sample
-
+    buildMetadata()
+    buildCharts()
   });
 }
 
 // Function for event listener
 function optionChanged(newSample) {
   // Build charts and metadata panel each time a new sample is selected
-
+  buildMetadata(newSample)
+  buildCharts(newSample)
 }
 
 // Initialize the dashboard
