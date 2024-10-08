@@ -62,7 +62,7 @@ function buildCharts(sample) {
     };
 
     // Render the Bubble Chart
-    Plotly.newPlot("bubbleChart", dataBubble, layoutBubble;
+    Plotly.newPlot("bubbleChart", dataBubble, layoutBubble);
 
     // For the Bar Chart, map the otu_ids to a list of strings for your yticks
     let mapOTUIDs = otuIDs.map(function(item) {
