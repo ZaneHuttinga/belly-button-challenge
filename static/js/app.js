@@ -4,7 +4,7 @@ function buildMetadata(sample) {
   d3.json("https://static.bc-edx.com/data/dl-1-2/m14/lms/starter/samples.json").then((data) => {
 
     // get the metadata field
-    let metadata = d3.select("metadata");
+    let metadata = d3.parse("metadata");
 
     // Filter the metadata for the object with the desired sample number
     function checkNumber(number) {
@@ -32,7 +32,7 @@ function buildCharts(sample) {
   d3.json("https://static.bc-edx.com/data/dl-1-2/m14/lms/starter/samples.json").then((data) => {
 
     // Get the samples field
-    let samplesList = d3.select("samples");
+    let samplesList = d3.parse("samples");
 
     // Filter the samples for the object with the desired sample number
     function checkNumber(number) {
@@ -95,7 +95,7 @@ function init() {
   d3.json("https://static.bc-edx.com/data/dl-1-2/m14/lms/starter/samples.json").then((data) => {
 
     // Get the names field
-    let names = d3.select("names");
+    let names = d3.parse("names");
 
     // Use d3 to select the dropdown with id of `#selDataset`
     let dropdownMenu = d3.select("#selDataset");
