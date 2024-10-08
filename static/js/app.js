@@ -108,8 +108,8 @@ function init() {
     let first = dropdownMenu[0]
 
     // Build charts and metadata panel with the first sample
-    buildMetadata()
-    buildCharts()
+    buildMetadata(first)
+    buildCharts(first)
   });
 }
 
