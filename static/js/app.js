@@ -78,7 +78,7 @@ function buildCharts(sample) {
     };
 
     // Render the Bar Chart
-    let dataBar = [barChart];
+    //let dataBar = [barChart];
 
     let layoutBar = {
       title: `Top 10 Bacteria Cultures Found`
@@ -108,7 +108,7 @@ function init() {
     }
 
     // Get the first sample from the list
-    let first = dropdownMenu[0]
+    let first = names[0]
 
     // Build charts and metadata panel with the first sample
     buildMetadata(first)
