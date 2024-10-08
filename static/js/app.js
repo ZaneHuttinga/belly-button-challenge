@@ -53,11 +53,15 @@ function buildCharts(sample) {
       size: sampleValues,
       color: otuIDs,
       text: otuLabels
-  }
+      }
+    };
+
+    let layoutBubble = {
+      title: `Bacteria Cultures Per Sample`
     };
 
     // Render the Bubble Chart
-
+    Plotly.newPlot("plot", dataBar, layoutBar);
 
     // For the Bar Chart, map the otu_ids to a list of strings for your yticks
     let mapOTUIDs = otuIDs.map(function(item) {
