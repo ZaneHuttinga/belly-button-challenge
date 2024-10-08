@@ -104,7 +104,7 @@ function init() {
     // Hint: Inside a loop, you will need to use d3 to append a new
     // option for each sample name.
     for (let i in names) {
-      dropdownMenu.html(i).append("p")
+      dropdownMenu.html(names[i]).append("p")
     }
 
     // Get the first sample from the list
