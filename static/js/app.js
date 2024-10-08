@@ -31,28 +31,55 @@ function buildCharts(sample) {
   d3.json("https://static.bc-edx.com/data/dl-1-2/m14/lms/starter/samples.json").then((data) => {
 
     // Get the samples field
+    let samplesList = d3.select("samples");
 
     // Filter the samples for the object with the desired sample number
-
+    function checkNumber(number) {
+      return number.id === sample;
+    }
+    let desiredObject = samplesList.filter(checkNumber);
 
     // Get the otu_ids, otu_labels, and sample_values
-
+    let otuIDs = desiredObject.otu_ids;
+    let otuLabels = desiredObject.otu_labels;
+    let sampleValues = desiredObject.sample_values;
 
     // Build a Bubble Chart
-
+    let bubbleChart = {
+      x: otuIDs,
+      y: sampleValues,
+      mode: 'markers',
+      marker: {
+      size: sampleValues,
+      color: otuIDs,
+      text: otuLabels
+  }
+    };
 
     // Render the Bubble Chart
 
 
     // For the Bar Chart, map the otu_ids to a list of strings for your yticks
-
+    let mapOTUIDs = otuIDs.map(function(item) {
+      return item.toString();
+    });
 
     // Build a Bar Chart
     // Don't forget to slice and reverse the input data appropriately
-
+    let barChart = {
+      x: sampleValues,
+      y: mapOTUIDs,
+      type: 'bar'
+    };
 
     // Render the Bar Chart
+    let dataBar = [barChart];
 
+    let layoutBar = {
+      title: `Top 10 Bacteria Cultures Found`
+    };
+
+    Plotly.newPlot("plot", dataBar, layoutBar);
   });
 }
 
@@ -61,7 +88,7 @@ function init() {
   d3.json("https://static.bc-edx.com/data/dl-1-2/m14/lms/starter/samples.json").then((data) => {
 
     // Get the names field
-
+    let names = d3.select("names");
 
     // Use d3 to select the dropdown with id of `#selDataset`
     let dropdownMenu = d3.select("#selDataset");
@@ -69,7 +96,7 @@ function init() {
     // Use the list of sample names to populate the select options
     // Hint: Inside a loop, you will need to use d3 to append a new
     // option for each sample name.
-
+    
 
     // Get the first sample from the list
 
