@@ -62,7 +62,7 @@ function buildCharts(sample) {
     };
 
     // Render the Bubble Chart
-    Plotly.newPlot("plot", dataBubble, layoutBubble;
+    Plotly.newPlot("bubbleChart", dataBubble, layoutBubble;
 
     // For the Bar Chart, map the otu_ids to a list of strings for your yticks
     let mapOTUIDs = otuIDs.map(function(item) {
@@ -84,7 +84,7 @@ function buildCharts(sample) {
       title: `Top 10 Bacteria Cultures Found`
     };
 
-    Plotly.newPlot("plot", dataBar, layoutBar);
+    Plotly.newPlot("barChart", dataBar, layoutBar);
 
     console.log(data);
   });
