@@ -23,6 +23,7 @@ function buildMetadata(sample) {
     for (let i in desiredObject) {
       sampleMetadata.html(i).append("p")
     }
+    console.log(data);
   });
 }
 
@@ -84,6 +85,8 @@ function buildCharts(sample) {
     };
 
     Plotly.newPlot("plot", dataBar, layoutBar);
+
+    console.log(data);
   });
 }
 
@@ -110,6 +113,8 @@ function init() {
     // Build charts and metadata panel with the first sample
     buildMetadata(first)
     buildCharts(first)
+
+    console.log(data);
   });
 }
 
